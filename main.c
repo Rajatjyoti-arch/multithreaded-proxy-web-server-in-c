@@ -72,5 +72,9 @@ int main(int argc, char* argv[]){
         exit(1);
     }
     printf("Binding on port : %d\n", port_number);
-    int listen_status = listen(proxy_socketID, max_clients)
+    int listen_status = listen(proxy_socketID, max_clients);
+    if(listen_status<0){
+        perror("Error in listening\n");
+        exit
+    }
 }
