@@ -22,3 +22,4 @@ void remove_cache_element();
 int port_number = 8080;
 int proxy_socketID;
 pthread_t tid[Max_Clients];
+sem_t semaphore;
