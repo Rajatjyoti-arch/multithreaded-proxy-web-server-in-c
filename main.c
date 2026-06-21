@@ -52,5 +52,6 @@ int main(int argc, char* argv[]){
         exit(1);
     }
 
-    print
+    printf("Starting Proxy server at port : %d\n", port_number);
+    proxy_socketId
 }
