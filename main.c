@@ -75,6 +75,12 @@ int main(int argc, char* argv[]){
     int listen_status = listen(proxy_socketID, max_clients);
     if(listen_status<0){
         perror("Error in listening\n");
-        exit
+        exit(1);
+    }
+    int i = 0;
+    int connected_socketID[max_clients];
+
+    while(1){
+        bzero((char*))
     }
 }
