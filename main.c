@@ -35,3 +35,5 @@ int proxy_socketID;
 pthread_t tid[Max_Clients];
 sem_t semaphore;
 pthread_mutex_t lock;
+
+cache_element* head
