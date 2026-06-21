@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include
+#include <sys/types.h>
+#include < sys/socket.h>
+
 #include <time.h>
 #include <pthread.h>
 #include <semaphore.h>
