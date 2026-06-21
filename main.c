@@ -42,4 +42,6 @@ int cache_size;
 int main(int argc, char* argv[]){
     int client_socketID, client_lens;
     struct sockaddr server_addr, client_addr;
+    sem_init(&semaphore, Max_Clients);
+
 }
