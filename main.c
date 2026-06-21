@@ -36,4 +36,9 @@ pthread_t tid[Max_Clients];
 sem_t semaphore;
 pthread_mutex_t lock;
 
-cache_element* head
+cache_element* head;
+int cache_size;
+
+int main(int argc, char* argv[]){
+    int client_socketID, client_lens;
+}
