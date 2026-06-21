@@ -41,7 +41,7 @@ int cache_size;
 
 int main(int argc, char* argv[]){
     int client_socketID, client_lens;
-    struct sockaddr server_addr, client_addr;
+    struct sockaddr_in server_addr, client_addr;
     sem_init(&semaphore,0, max_clients);
     pthread_mutex_init(&lock, NULL);
     if(argv == 2){
@@ -63,5 +63,5 @@ int main(int argc, char* argv[]){
         perror("setSockOpt failded\n");
     }
 
-    bzero
+    bzero(char*)
 }
