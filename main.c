@@ -66,4 +66,6 @@ int main(int argc, char* argv[]){
     bzero((char*)&server_addr, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port_number);
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+    if(bind(proxy_socketID,(struct sockaddr*)&server))
 }
