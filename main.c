@@ -81,6 +81,8 @@ int main(int argc, char* argv[]){
     int connected_socketID[max_clients];
 
     while(1){
-        bzero((char*))
+        bzero((char*)&client_addr, sizeof(client_addr));
+        client_len = sizeof(client_addr);
+        
     }
 }
