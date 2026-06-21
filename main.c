@@ -45,6 +45,12 @@ int main(int argc, char* argv[]){
     sem_init(&semaphore,0, max_clients);
     pthread_mutex_init(&lock, NULL);
     if(argv == 2){
-        port_number = atoi()
+        port_number = atoi(argv[1]);
     }
+    else{
+        printf("Too few argumments\n");
+        exit(1);
+    }
+
+    print
 }
