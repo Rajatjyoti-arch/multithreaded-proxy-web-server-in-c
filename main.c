@@ -5,8 +5,13 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
-
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <fcntl.h>
 #include <time.h>
+#include <sys/wait.h>
+#include <errno.h>
 #include <pthread.h>
 #include <semaphore.h>
 
