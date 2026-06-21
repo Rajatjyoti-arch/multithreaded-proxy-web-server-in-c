@@ -1,0 +1,14 @@
+# Compiled Binaries
+*.out
+*.o
+proxy_server
+
+# Logs
+auto_push.log
+auto_push_output.log
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
