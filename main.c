@@ -1,8 +1,11 @@
 #include "proxy_parse.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include
 #include <time.h>
 #include <pthread.h>
+#include <semaphore.h>
 
 #define Max_Clients 10
 
