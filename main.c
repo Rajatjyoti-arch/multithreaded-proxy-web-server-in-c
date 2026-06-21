@@ -15,7 +15,7 @@
 #include <pthread.h>
 #include <semaphore.h>
 
-#define Max_Clients 10
+#define max_clients 10
 
 typedef struct cache_element cache_element;
 
@@ -32,7 +32,7 @@ void remove_cache_element();
 
 int port_number = 8080;
 int proxy_socketID;
-pthread_t tid[Max_Clients];
+pthread_t tid[max_clients];
 sem_t semaphore;
 pthread_mutex_t lock;
 
@@ -42,6 +42,7 @@ int cache_size;
 int main(int argc, char* argv[]){
     int client_socketID, client_lens;
     struct sockaddr server_addr, client_addr;
-    sem_init(&semaphore, Max_Clients);
+    sem_init(&semaphore, max_clients);
+    pthread_mutex_init(&lock, NULL);
 
 }
