@@ -59,5 +59,5 @@ int main(int argc, char* argv[]){
         exit(1);
     }
     int resuse = 1;
-    if(setsockopt(proxy_socketID, SQL_SOCKET, SO_REUSEADDR,))
+    if(setsockopt(proxy_socketID, SQL_SOCKET, SO_REUSEADDR, (const char*)&reuse, sizeof(reuse)))
 }
