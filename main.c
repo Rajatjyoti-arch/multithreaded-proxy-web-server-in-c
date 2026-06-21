@@ -55,6 +55,6 @@ int main(int argc, char* argv[]){
     printf("Starting Proxy server at port : %d\n", port_number);
     proxy_socketID = socket(AF_INET, SOCK_STREAM, 0)
     if(proxy_socketID<0){
-        pe
+        perror("Failed to creat a socket")
     }
 }
