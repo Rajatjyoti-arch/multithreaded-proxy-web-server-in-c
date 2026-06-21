@@ -64,5 +64,6 @@ int main(int argc, char* argv[]){
     }
 
     bzero((char*)&server_addr, sizeof(server_addr));
-    server_addr.sin_family = AF
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(port)
 }
