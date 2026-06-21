@@ -58,5 +58,6 @@ int main(int argc, char* argv[]){
         perror("Failed to creat a socket\n");
         exit(1);
     }
-    int resuse
+    int resuse = 1;
+    if(setsockopt(proxy_socketID, SQL_SOCKET, SO_REUSEADDR,))
 }
