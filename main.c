@@ -63,5 +63,6 @@ int main(int argc, char* argv[]){
         perror("setSockOpt failded\n");
     }
 
-    bzero(char*)
+    bzero((char*)&server_addr, sizeof(server_addr));
+    server_addr.sin_family = AF
 }
