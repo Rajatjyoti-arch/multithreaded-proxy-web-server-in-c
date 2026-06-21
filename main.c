@@ -40,7 +40,7 @@ cache_element* head;
 int cache_size;
 
 int main(int argc, char* argv[]){
-    int client_socketID, client_lens;
+    int client_socketID, client_len;
     struct sockaddr_in server_addr, client_addr;
     sem_init(&semaphore,0, max_clients);
     pthread_mutex_init(&lock, NULL);
@@ -83,6 +83,6 @@ int main(int argc, char* argv[]){
     while(1){
         bzero((char*)&client_addr, sizeof(client_addr));
         client_len = sizeof(client_addr);
-        
+
     }
 }
