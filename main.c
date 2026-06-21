@@ -67,5 +67,8 @@ int main(int argc, char* argv[]){
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port_number);
     server_addr.sin_addr.s_addr = INADDR_ANY;
-    if(bind(proxy_socketID,(struct sockaddr*)&server))
+    if(bind(proxy_socketID,(struct sockaddr*)&server_addr, sizeof(server_addr)<0)){
+        perror("Port is not available\n");
+        exit(1)
+    }
 }
