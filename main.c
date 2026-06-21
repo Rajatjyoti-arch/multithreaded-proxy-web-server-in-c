@@ -58,12 +58,12 @@ int main(int argc, char* argv[]){
         perror("Failed to creat a socket\n");
         exit(1);
     }
-    int resuse = 1;
-    if(setsockopt(proxy_socketID, SQL_SOCKET, SO_REUSEADDR, (const char*)&reuse, sizeof(reuse))<0){
+    int reuse = 1;
+    if(setsockopt(proxy_socketID, SOL_SOCKET, SO_REUSEADDR, (const char*)&reuse, sizeof(reuse))<0){
         perror("setSockOpt failded\n");
     }
 
     bzero((char*)&server_addr, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(port)
+    server_addr.sin_port = htons(port_number);
 }
