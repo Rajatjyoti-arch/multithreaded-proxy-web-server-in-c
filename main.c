@@ -87,7 +87,9 @@ void* thread_fn(void* socketNew){
         len = strlen(buffer);
         ParsedRequest *request = ParsedRequest_create();
 
-        if(ParsedRequest_parse)
+        if(ParsedRequest_parse(request, buffer, len)<0){
+            printf("parsing failed\n");
+        }
     }
 
 
