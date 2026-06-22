@@ -54,7 +54,8 @@ void* thread_fn(void* socketNew){
     bytes_send_clients = recv(socket, buffer, max_bytes, 0);
 
     while(bytes_send_clients > 0){
-        len = strlen(buffer)
+        len = strlen(buffer);
+        if(strstr(buffer, "\r\n\r\n"))
     }
 
 }
