@@ -16,7 +16,7 @@
 #include <semaphore.h>
 
 #define max_clients 10
-#define max_bytes 10*(1<<10)
+#define max_bytes 4096
 
 typedef struct cache_element cache_element;
 
@@ -49,7 +49,8 @@ void* thread_fn(void* socketNew){
     int socket = *t;
     int bytes_send_client, lens;
 
-    char *buffer = (char*)calloc(max_bytes)
+    char *buffer = (char*)calloc(max_bytes, sizeof(char));
+    bezero(buffer, max_bytes)
 
 }
 
