@@ -84,6 +84,11 @@ int main(int argc, char* argv[]){
         bzero((char*)&client_addr, sizeof(client_addr));
         client_len = sizeof(client_addr);
         client_socketID = accept(proxy_socketID, (struct sockaddr*)&client_addr, (socklen_t*)&client_len);
-        if()
+        if(client_socketID<0){
+            printf("Not able to connect");
+            exit(1);
+        }
+        else
+
     }
 }
