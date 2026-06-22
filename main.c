@@ -90,8 +90,9 @@ int main(int argc, char* argv[]){
         }
         else{
             connected_socketID[i] = client_socketID;
-
         }
+
+        
 
     }
 }
