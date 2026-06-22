@@ -69,7 +69,7 @@ void* thread_fn(void* socketNew){
     }
     struct cache_element* temp = find(tempReq);
     if(temp != NULL){
-        int size
+        int size = temp->/sizeof(char);
     }
 
 
