@@ -16,6 +16,7 @@
 #include <semaphore.h>
 
 #define max_clients 10
+#define max_bytes
 
 typedef struct cache_element cache_element;
 
@@ -46,7 +47,9 @@ void* thread_fn(void* socketNew){
     printf("semaphore value is : %d\n",p);
     int *t = (int*) socketNew;
     int socket = *t;
-    int bytes_send_client, lens
+    int bytes_send_client, lens;
+
+    char *buffer = (char)
 
 }
 
