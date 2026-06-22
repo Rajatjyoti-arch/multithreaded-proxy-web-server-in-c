@@ -85,7 +85,7 @@ void* thread_fn(void* socketNew){
     }
     else if(bytes_send_client>0){
         len = strlen(buffer);
-        ParsedRequest
+        ParsedRequest *request = ParsedRequest_create()
     }
 
 
