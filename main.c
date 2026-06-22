@@ -51,11 +51,13 @@ void* thread_fn(void* socketNew){
 
     char *buffer = (char*)calloc(max_bytes, sizeof(char));
     bezero(buffer, max_bytes);
-    bytes_send_clients = recv(socket, buffer, max_bytes, 0);
+    bytes_send_client = recv(socket, buffer, max_bytes, 0);
 
-    while(bytes_send_clients > 0){
+    while(bytes_send_client > 0){
         len = strlen(buffer);
-        if(strstr(buffer, "\r\n\r\n"))
+        if(strstr(buffer, "\r\n\r\n") == NULL){
+            bytes_send_client = recv(socket)
+        }
     }
 
 }
