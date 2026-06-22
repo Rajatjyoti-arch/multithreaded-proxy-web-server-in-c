@@ -63,12 +63,15 @@ void* thread_fn(void* socketNew){
         }
     }
 
-    char *tempreq = (char*)malloc(strlen(buffer)*sizeof(char)+1);
+    char *tempReq = (char*)malloc(strlen(buffer)*sizeof(char)+1);
     for(int i = 0; i<strlen(buffer); i++){
-        tempreq[i] = buffer[i];
+        tempReq[i] = buffer[i];
     }
     struct cache_element* temp = find(tempReq);
-    
+    if(temp != NULL){
+        
+    }
+
 
 }
 
