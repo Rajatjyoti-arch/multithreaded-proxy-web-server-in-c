@@ -96,6 +96,7 @@ int main(int argc, char* argv[]){
         struct in_addr ip_addr = client_pt->sin_addr;
         char str[INET_ADDRSTRLEN];
         inet_ntop(AF_INET, &ip_addr, str, INET6_ADDRSTRLEN);
+        printf("Client is connected ")
 
     }
 }
