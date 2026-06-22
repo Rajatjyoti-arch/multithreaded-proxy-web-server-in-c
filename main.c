@@ -47,7 +47,7 @@ void* thread_fn(void* socketNew){
     printf("semaphore value is : %d\n",p);
     int *t = (int*) socketNew;
     int socket = *t;
-    int bytes_send_client, lens;
+    int bytes_send_client, len;
 
     char *buffer = (char*)calloc(max_bytes, sizeof(char));
     bezero(buffer, max_bytes);
@@ -58,7 +58,12 @@ void* thread_fn(void* socketNew){
         if(strstr(buffer, "\r\n\r\n") == NULL){
             bytes_send_client = recv(socket, buffer + len, max_bytes-len, 0);
         }
+        else{
+            break;
+        }
     }
+
+    char *tempreq = 
 
 }
 
