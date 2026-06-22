@@ -40,7 +40,10 @@ cache_element* head;
 int cache_size;
 
 void* thread_fn(void* socketNew){
-    sem_wait(&semaphore)
+    sem_wait(&semaphore);
+    int p;
+    sem_getvalue(&semaphore, p);
+
 }
 
 
