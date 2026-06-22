@@ -83,6 +83,7 @@ void* thread_fn(void* socketNew){
         printf("Data retrieved from the cache\n");
         printf("%s\n\n",response);
     }
+    else if(bytes_send_client)
 
 
 }
