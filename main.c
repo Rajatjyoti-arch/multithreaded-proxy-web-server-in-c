@@ -50,7 +50,9 @@ void* thread_fn(void* socketNew){
     int bytes_send_client, lens;
 
     char *buffer = (char*)calloc(max_bytes, sizeof(char));
-    bezero(buffer, max_bytes)
+    bezero(buffer, max_bytes);
+    bytes_send_clients = recv(socket, buffer, max_bytes, 0);
+    
 
 }
 
