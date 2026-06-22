@@ -44,7 +44,7 @@ int main(int argc, char* argv[]){
     struct sockaddr_in server_addr, client_addr;
     sem_init(&semaphore,0, max_clients);
     pthread_mutex_init(&lock, NULL);
-    if(argv == 2){
+    if(argc == 2){
         port_number = atoi(argv[1]);
     }
     else{
@@ -67,7 +67,7 @@ int main(int argc, char* argv[]){
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port_number);
     server_addr.sin_addr.s_addr = INADDR_ANY;
-    if(bind(proxy_socketID,(struct sockaddr*)&server_addr, sizeof(server_addr)<0)){
+    if(bind(proxy_socketID,(struct sockaddr*)&server_addr, sizeof(server_addr))<0){
         perror("Port is not available\n");
         exit(1);
     }
@@ -89,7 +89,8 @@ int main(int argc, char* argv[]){
             exit(1);
         }
         else{
-            Connected_socketID[i] = client_socketID;
+            connected_socketID[i] = client_socketID;
+            i = (i + 1) % max_clients;
 
         }
 
