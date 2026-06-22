@@ -74,7 +74,8 @@ void* thread_fn(void* socketNew){
         char response [max_bytes];
         while(pos*size){
             bezero(response, max_bytes);
-            
+            for(int i = 0, i<max_bytes)
+
         }
     }
 
