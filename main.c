@@ -39,7 +39,10 @@ pthread_mutex_t lock;
 cache_element* head;
 int cache_size;
 
-void
+void* thread_fn(void* socketNew){
+    sem_wait(&semaphore)
+}
+
 
 int main(int argc, char* argv[]){
     int client_socketID, client_len;
