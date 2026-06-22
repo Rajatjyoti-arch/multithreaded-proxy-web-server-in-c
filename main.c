@@ -44,7 +44,9 @@ void* thread_fn(void* socketNew){
     int p;
     sem_getvalue(&semaphore, p);
     printf("semaphore value is : %d\n",p);
-    int* t = (int*) socketNew
+    int *t = (int*) socketNew;
+    int socket = *t;
+    int bytes_send_client, lens
 
 }
 
