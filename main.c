@@ -80,7 +80,8 @@ void* thread_fn(void* socketNew){
             }
             send(socket, response, max_bytes, 0);
         }
-        printf("Data")
+        printf("Data retrieved from the cache\n");
+        printf("%s\n\n",response);
     }
 
 
