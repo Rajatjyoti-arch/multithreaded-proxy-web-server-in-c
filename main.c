@@ -96,7 +96,8 @@ int main(int argc, char* argv[]){
         struct in_addr ip_addr = client_pt->sin_addr;
         char str[INET_ADDRSTRLEN];
         inet_ntop(AF_INET, &ip_addr, str, INET6_ADDRSTRLEN);
-        printf("Client is connected with port number %d and ip address is %s\n", ntohs(client_addr))
-
+        printf("Client is connected with port number %d and ip address is %s\n", ntohs(client_addr.sin_port),str);
+        
+        pthread_create();
     }
 }
