@@ -95,7 +95,7 @@ int main(int argc, char* argv[]){
         struct sockaddr_in * client_pt = (struct sockaddr_in*)&client_addr;
         struct in_addr ip_addr = client_pt->sin_addr;
         char str[INET_ADDRSTRLEN];
-        inet_ntop
+        inet_ntop(AF_INET, &ip_addr, str, INET6_ADDRSTRLEN);
 
     }
 }
