@@ -78,10 +78,9 @@ void* thread_fn(void* socketNew){
                 response[i] = temp->data[i];
                 pos++;
             }
-            send{socktet, response, max_bytes, 0};
-            
-
+            send(socket, response, max_bytes, 0);
         }
+        printf("Data")
     }
 
 
