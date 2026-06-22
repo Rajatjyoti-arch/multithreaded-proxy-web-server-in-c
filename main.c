@@ -75,8 +75,11 @@ void* thread_fn(void* socketNew){
         while(pos*size){
             bezero(response, max_bytes);
             for(int i = 0; i<max_bytes; i++){
-                response[i] = temp->data[i]
+                response[i] = temp->data[i];
+                pos++;
             }
+            send{socktet, response, max_bytes, 0};
+            
 
         }
     }
