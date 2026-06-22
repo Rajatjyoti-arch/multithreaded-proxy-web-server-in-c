@@ -92,6 +92,7 @@ int main(int argc, char* argv[]){
             connected_socketID[i] = client_socketID;
         }
 
+        struct sockaddr_in * client_pt = (struct sockaddr_in*)&client_addr;
         
 
     }
