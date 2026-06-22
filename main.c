@@ -88,7 +88,10 @@ int main(int argc, char* argv[]){
             printf("Not able to connect");
             exit(1);
         }
-        else
+        else{
+            Connected_socketID[i] = client_socketID;
+
+        }
 
     }
 }
