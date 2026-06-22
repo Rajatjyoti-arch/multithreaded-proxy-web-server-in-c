@@ -67,6 +67,8 @@ void* thread_fn(void* socketNew){
     for(int i = 0; i<strlen(buffer); i++){
         tempreq[i] = buffer[i];
     }
+    struct cache_element* temp = find(tempReq);
+    
 
 }
 
