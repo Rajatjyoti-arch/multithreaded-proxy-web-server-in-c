@@ -83,7 +83,10 @@ void* thread_fn(void* socketNew){
         printf("Data retrieved from the cache\n");
         printf("%s\n\n",response);
     }
-    else if(bytes_send_client)
+    else if(bytes_send_client>0){
+        len = strlen(buffer);
+        ParsedRequest
+    }
 
 
 }
