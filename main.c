@@ -39,6 +39,8 @@ pthread_mutex_t lock;
 cache_element* head;
 int cache_size;
 
+void
+
 int main(int argc, char* argv[]){
     int client_socketID, client_len;
     struct sockaddr_in server_addr, client_addr;
@@ -99,6 +101,8 @@ int main(int argc, char* argv[]){
         printf("Client is connected with port number %d and ip address is %s\n", ntohs(client_addr.sin_port),str);
         
         pthread_create(&tid[i], NULL, thread_fn, (void*)&connected_socketID[i]);
-        i++
+        i++;
     }
+    close(proxy_socketID);
+    return 0;
 }
