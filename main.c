@@ -72,7 +72,10 @@ void* thread_fn(void* socketNew){
         int size = temp->len/sizeof(char);
         int pos = 0;
         char response [max_bytes];
-        while
+        while(pos*size){
+            bezero(response, max_bytes);
+            
+        }
     }
 
 
