@@ -101,7 +101,9 @@ void* thread_fn(void* socketNew){
                     else{
                         sendErrorMessage(socket, 500);
                     }
-                
+                }
+                else{
+                    printf(" This code doesnt support any method apart from GET\n");
                 }
             }
         }
