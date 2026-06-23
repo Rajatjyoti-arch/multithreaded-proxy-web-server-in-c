@@ -116,7 +116,9 @@ void* thread_fn(void* socketNew){
     close(socket);
     free(buffer);
     sem_post(&semaphore);
-    sem_getvalue
+    sem_getvalue(&semaphore,p);
+    printf("Semaphore post value is %d\n", p);
+    free(tempReq);
 
 
 }
