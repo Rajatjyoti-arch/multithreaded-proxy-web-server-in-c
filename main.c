@@ -49,6 +49,8 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     strcat(buf, "\r\n");
 
     size_t len = strlen(buf);
+
+    if(ParsedHeader_set(request, "Connection", "Close"))
     if(ParsedHeader_get(request, "Host") == NULL){
         if(ParsedHeader_set(request, "Host", request->host)<0){
             printf("Set Host header key is not working");
