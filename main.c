@@ -98,6 +98,10 @@ void* thread_fn(void* socketNew){
                     if(bytes_send_client == -1){
                         sendErrorMessage(socket, 500);
                     }
+                    else{
+                        sendErrorMessage(socket, 500);
+                    }
+                
                 }
             }
         }
