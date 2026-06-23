@@ -48,7 +48,9 @@ int connectRemoteServer(char* host_addr, int port_num){
         return -1;
     }
     struct hostent* host = gethostbyname(host_addr);
-    if(host)
+    if(host==NULL){
+        fprintf
+    }
 }
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
