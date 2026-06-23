@@ -40,7 +40,10 @@ pthread_mutex_t lock;
 cache_element* head;
 int cache_size;
 
-int connectRemoteServer(char* host_addr, int port_num)
+int connectRemoteServer(char* host_addr, int port_num){
+
+    int remoteSocket = socket(AF_INET, SOCK_STREAM, 0);
+}
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     char *buf = (char *)malloc(sizeof(char)*max_bytes);
