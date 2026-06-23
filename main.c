@@ -91,8 +91,10 @@ void* thread_fn(void* socketNew){
             printf("parsing failed\n");
         }
         else{
-            bzero(buffer, max_bytes;
-
+            bzero(buffer, max_bytes);
+            if(!strcmp(request->method, "GET")){
+                if(request)
+            }
         }
     }
 
