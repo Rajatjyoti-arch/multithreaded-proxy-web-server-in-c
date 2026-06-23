@@ -42,8 +42,10 @@ int cache_size;
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     char *buf = (char *)malloc(sizeof(char)*max_bytes);
-    strcpy(buff, "GET");
-    strcpy(buff, request->path);
+    strcpy(buf, "GET");
+    strcat(buf, request->path);
+    strcat(buf, " ");
+    strcat()
 }
 
 void* thread_fn(void* socketNew){
