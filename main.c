@@ -45,7 +45,8 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     strcpy(buf, "GET");
     strcat(buf, request->path);
     strcat(buf, " ");
-    strcat()
+    strcat(buf, request->version);
+    strcat(buf, "\r\n");
 }
 
 void* thread_fn(void* socketNew){
