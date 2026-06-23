@@ -40,7 +40,10 @@ pthread_mutex_t lock;
 cache_element* head;
 int cache_size;
 
-int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq)
+int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
+    char *buf = (char *)malloc(sizeof(char)*max_bytes);
+    strcpy(buff, "GET")
+}
 
 void* thread_fn(void* socketNew){
     sem_wait(&semaphore);
