@@ -67,6 +67,7 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     if(request->port != NULL){
         server_port = atoi(request->port);
     }
+    int remoteSocketID = connectRemoteServer(request->host, servent)
 }
 
 void* thread_fn(void* socketNew){
