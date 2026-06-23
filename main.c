@@ -112,6 +112,10 @@ void* thread_fn(void* socketNew){
     else if(bytes_send_client == 0){
         printf("Client is disconnected");
     }
+    shutdown(socket, SHUT_RDWR);
+    close(socket);
+    free(buffer);
+    sem_post()
 
 
 }
