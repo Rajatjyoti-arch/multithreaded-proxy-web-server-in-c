@@ -107,7 +107,10 @@ void* thread_fn(void* socketNew){
                 }
             }
         }
-        ParsedRequest_destroy(request)
+        ParsedRequest_destroy(request);
+    }
+    else if(bytes_send_client == 0){
+        printf("Client is disconnected");
     }
 
 
