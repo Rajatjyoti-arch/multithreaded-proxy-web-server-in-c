@@ -93,7 +93,7 @@ void* thread_fn(void* socketNew){
         else{
             bzero(buffer, max_bytes);
             if(!strcmp(request->method, "GET")){
-                if(request)
+                if(request->host && request->path && checkHTTPversion(request))
             }
         }
     }
