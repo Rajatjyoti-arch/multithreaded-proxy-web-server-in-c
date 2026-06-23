@@ -107,6 +107,7 @@ void* thread_fn(void* socketNew){
                 }
             }
         }
+        ParsedRequest_destroy(request)
     }
 
 
