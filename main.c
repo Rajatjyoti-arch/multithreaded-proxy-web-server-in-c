@@ -115,7 +115,8 @@ void* thread_fn(void* socketNew){
     shutdown(socket, SHUT_RDWR);
     close(socket);
     free(buffer);
-    sem_post()
+    sem_post(&semaphore);
+    sem_getvalue
 
 
 }
