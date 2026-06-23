@@ -49,8 +49,10 @@ int connectRemoteServer(char* host_addr, int port_num){
     }
     struct hostent* host = gethostbyname(host_addr);
     if(host==NULL){
-        fprintf
+        fprintf(stderr,"No such host exist\n");
+        returb -1;
     }
+    struct sockaddr_in server_addr;
 }
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
