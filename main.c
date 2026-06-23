@@ -59,7 +59,11 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
             printf("Set Host header key is not working");
         }
     }
-    if(ParsedRequest_unparse_headers(request, buf+len, (size_t)max_bytes-len))
+    if(ParsedRequest_unparse_headers(request, buf+len, (size_t)max_bytes-len)<0){
+        printf("unparse failed");
+    }
+
+    
 }
 
 void* thread_fn(void* socketNew){
