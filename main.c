@@ -40,6 +40,8 @@ pthread_mutex_t lock;
 cache_element* head;
 int cache_size;
 
+int handle_request()
+
 void* thread_fn(void* socketNew){
     sem_wait(&semaphore);
     int p;
@@ -119,8 +121,7 @@ void* thread_fn(void* socketNew){
     sem_getvalue(&semaphore,p);
     printf("Semaphore post value is %d\n", p);
     free(tempReq);
-
-
+    return NULL;
 }
 
 
