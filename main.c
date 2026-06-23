@@ -54,6 +54,7 @@ int connectRemoteServer(char* host_addr, int port_num){
     }
     struct sockaddr_in server_addr;
     bzero((char *)&server_addr, sizeof(server_addr));
+    server_addr.sin_port = htons(port_num)
 }
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
