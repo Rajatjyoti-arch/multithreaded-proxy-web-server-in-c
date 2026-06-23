@@ -90,6 +90,10 @@ void* thread_fn(void* socketNew){
         if(ParsedRequest_parse(request, buffer, len)<0){
             printf("parsing failed\n");
         }
+        else{
+            bzero(buffer, max_bytes;
+
+        }
     }
 
 
