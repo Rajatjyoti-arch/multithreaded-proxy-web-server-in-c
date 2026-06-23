@@ -57,7 +57,8 @@ int connectRemoteServer(char* host_addr, int port_num){
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port_num);
 
-    bcopy(char &)host->h_addr (char *)&server
+    bcopy((char &)host->h_addr (char *)&server_addr.sin_addr.s_addr, host->h_length);
+    
 }
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
