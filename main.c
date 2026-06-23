@@ -43,6 +43,10 @@ int cache_size;
 int connectRemoteServer(char* host_addr, int port_num){
 
     int remoteSocket = socket(AF_INET, SOCK_STREAM, 0);
+    if(remoteSocket<0){
+        printf("Error in creating your socket\n");
+        return
+    }
 }
 
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
