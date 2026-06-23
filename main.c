@@ -40,6 +40,8 @@ pthread_mutex_t lock;
 cache_element* head;
 int cache_size;
 
+int connectRemoteServer(char* host_addr, int port_num)
+
 int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     char *buf = (char *)malloc(sizeof(char)*max_bytes);
     strcpy(buf, "GET");
@@ -67,7 +69,7 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     if(request->port != NULL){
         server_port = atoi(request->port);
     }
-    
+
     int remoteSocketID = connectRemoteServer(request->host, server_port);
 }
 
