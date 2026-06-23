@@ -63,7 +63,10 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
         printf("unparse failed");
     }
 
-    
+    int server_port = 80;
+    if(request->port != NULL){
+        server_port = atoi(request->port);
+    }
 }
 
 void* thread_fn(void* socketNew){
