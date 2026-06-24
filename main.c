@@ -50,7 +50,7 @@ int connectRemoteServer(char* host_addr, int port_num){
     struct hostent* host = gethostbyname(host_addr);
     if(host==NULL){
         fprintf(stderr,"No such host exist\n");
-        returb -1;
+        return -1;
     }
     struct sockaddr_in server_addr;
     bzero((char *)&server_addr, sizeof(server_addr));
@@ -58,9 +58,9 @@ int connectRemoteServer(char* host_addr, int port_num){
     server_addr.sin_port = htons(port_num);
 
     bcopy((char *)&host->h_addr, (char *)&server_addr.sin_addr.s_addr, host->h_length);
-    if(connect(remoteSocket, (struct socaksddr *)&server_addr),(socket_t)sizeof(server_addr)<0){
+    if(connect(remoteSocket, (struct socaksddr *)&server_addr,(size_t)sizeof(server_addr)<0)){
         fprintf(stderr, "Error in connecting\n");
-        
+
     }
 
 }
