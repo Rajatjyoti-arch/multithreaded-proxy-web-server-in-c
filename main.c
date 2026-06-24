@@ -95,6 +95,9 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     }
 
     int remoteSocketID = connectRemoteServer(request->host, server_port);
+    if(remoteSocketID<0){
+        return -1
+    }
 }
 
 void* thread_fn(void* socketNew){
