@@ -118,6 +118,8 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
             perror("Error in sending data to the client\n");
             break;
         }
+        bzero(buf, max_bytes);
+        bytes_send = recv(remoteSocketID)
     }
 }
 
