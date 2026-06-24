@@ -123,7 +123,8 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     }
     temp_buffer[temp_buffer_index] = '\0';
     free(buf);
-    ass_cache
+    add_cache_element(temp_buffer, strlen(temp_buffer), tempReq);
+    
 }
 
 void* thread_fn(void* socketNew){
