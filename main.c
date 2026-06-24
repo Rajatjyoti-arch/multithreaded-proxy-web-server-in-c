@@ -99,7 +99,10 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
         return -1;
     }
     int bytes_send = send(remoteSocketID, buf, strlen(buf), 0);
-    bzero(buf, max_bytes)
+    bzero(buf, max_bytes);
+
+    bytes_send = recv(remoteSocketID, buf, max_bytes-1, 0);
+    
 }
 
 void* thread_fn(void* socketNew){
