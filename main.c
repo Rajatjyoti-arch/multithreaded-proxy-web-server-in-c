@@ -60,8 +60,9 @@ int connectRemoteServer(char* host_addr, int port_num){
     bcopy((char *)&host->h_addr, (char *)&server_addr.sin_addr.s_addr, host->h_length);
     if(connect(remoteSocket, (struct socaksddr *)&server_addr,(size_t)sizeof(server_addr)<0)){
         fprintf(stderr, "Error in connecting\n");
-
+        return -1;
     }
+    return remoteSocket;
 
 }
 
