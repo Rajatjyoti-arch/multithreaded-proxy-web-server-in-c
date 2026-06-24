@@ -141,6 +141,7 @@ int checkGTTPversion(char *msg)
     else
         version = -1;
     
+    return version;
 }
 
 void* thread_fn(void* socketNew){
