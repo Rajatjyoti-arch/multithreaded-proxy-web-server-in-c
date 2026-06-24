@@ -107,7 +107,8 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     int temp_buffer_index = 0;
 
     while(bytes_send > 0){
-        bytes_Send = send(clientSocketID, buf, bytes_Send, 0)
+        bytes_send = send(clientSocketID, buf, bytes_send, 0);
+        for(int i=0; i<bytes_send/sizeof(char) )
     }
 }
 
