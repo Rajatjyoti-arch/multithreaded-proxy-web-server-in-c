@@ -58,7 +58,10 @@ int connectRemoteServer(char* host_addr, int port_num){
     server_addr.sin_port = htons(port_num);
 
     bcopy((char *)&host->h_addr, (char *)&server_addr.sin_addr.s_addr, host->h_length);
-    if(connect(remoteSocket, (struct socaksddr *)&server_addr),(socket_t)sizeof(server_addr)<0)
+    if(connect(remoteSocket, (struct socaksddr *)&server_addr),(socket_t)sizeof(server_addr)<0){
+        fprintf(stderr, "Error in connecting\n");
+        
+    }
 
 }
 
