@@ -124,7 +124,9 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     temp_buffer[temp_buffer_index] = '\0';
     free(buf);
     add_cache_element(temp_buffer, strlen(temp_buffer), tempReq);
-    
+    free(temp_buffer);
+    close(remoteSocketID);
+    return 0;
 }
 
 void* thread_fn(void* socketNew){
