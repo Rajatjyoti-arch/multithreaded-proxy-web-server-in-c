@@ -129,6 +129,11 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     return 0;
 }
 
+int checkGTTPversion(char *msg)
+{
+    
+}
+
 void* thread_fn(void* socketNew){
     sem_wait(&semaphore);
     int p;
