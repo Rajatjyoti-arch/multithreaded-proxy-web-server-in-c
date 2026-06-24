@@ -104,7 +104,11 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     bytes_send = recv(remoteSocketID, buf, max_bytes-1, 0);
     char * temp_buffer = (char*)malloc(sizeof(char)*max_bytes);
     int temp_buffer_size = max_bytes;
-    
+    int temp_buffer_index = 0;
+
+    while(bytes_send > 0){
+        bytes_Send = send(clientSocketID, buf, bytes_Send, 0)
+    }
 }
 
 void* thread_fn(void* socketNew){
