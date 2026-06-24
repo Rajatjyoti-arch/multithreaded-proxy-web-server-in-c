@@ -131,7 +131,10 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
 
 int checkGTTPversion(char *msg)
 {
-    
+    int version = -1;
+    if(strncmp(msg, "HTTP/1.1", 8) == 0){
+        
+    }
 }
 
 void* thread_fn(void* socketNew){
