@@ -133,8 +133,9 @@ int checkGTTPversion(char *msg)
 {
     int version = -1;
     if(strncmp(msg, "HTTP/1.1", 8) == 0){
-        
+        version = 1;
     }
+    else if(strncmp(msg, "HTTP/1.0", 8))
 }
 
 void* thread_fn(void* socketNew){
