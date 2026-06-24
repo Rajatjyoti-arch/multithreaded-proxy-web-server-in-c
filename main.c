@@ -96,8 +96,10 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
 
     int remoteSocketID = connectRemoteServer(request->host, server_port);
     if(remoteSocketID<0){
-        return -1
+        return -1;
     }
+    int bytes_send = send(remoteSocketID, buf, strlen(buf), 0);
+    bzero(buf, max_bytes)
 }
 
 void* thread_fn(void* socketNew){
