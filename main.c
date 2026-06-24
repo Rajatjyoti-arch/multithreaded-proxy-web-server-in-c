@@ -112,7 +112,8 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
             temp_buffer[temp_buffer_index] = buf[i];
             temp_buffer_index++;
         }
-        temp_buffer_s
+        temp_buffer_size += max_bytes;
+        temp_buffer = (char*)realloc(temp_buffer)
     }
 }
 
