@@ -391,7 +391,7 @@ int add_cache_element(char *data, int size, char *url){
         element -> len = size;
         head = element;
         cache_size += element_size;
-        temp_lock
+        temp_lock_val = pthread_
     }
 
 }
