@@ -373,7 +373,9 @@ void remove_cache_element(){
     cache_element *q;
     cache_element *temp;
 
-    int temp_lock_val = pthread_mutex_lock
+    int temp_lock_val = pthread_mutex_lock(&lock);
+    printf("Lock is aqquired\n");
+    if(head)
 }
 
 int add_cache_element(char *data, int size, char *url){
