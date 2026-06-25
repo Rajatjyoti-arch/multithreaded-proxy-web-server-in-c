@@ -355,7 +355,11 @@ cache_element *find(char* url){
                 printf("LRU time track after %ld", site->lru_time_track);
                 break;
             }
-            
+            site = site->next;
         }
     }
+    else{
+        printf("URL not found\n");
+    }
+    
 }
