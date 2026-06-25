@@ -388,7 +388,10 @@ int add_cache_element(char *data, int size, char *url){
         strcpy(element -> url, url);
         element -> lru_time_track = time(NULL);
         element -> next = head;
-        element -> len = size
+        element -> len = size;
+        head = element;
+        cache_size += element_size;
+        temp_lock
     }
 
 }
