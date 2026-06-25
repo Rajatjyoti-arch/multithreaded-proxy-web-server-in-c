@@ -392,7 +392,7 @@ void remove_cache_element(){
         free(temp);
     }
     temp_lock_val = pthread_mutex_unlock(&lock);
-    printf("Remove cache lock\n")
+    printf("Remove cache lock\n");
 
 }
 
