@@ -383,7 +383,8 @@ int add_cache_element(char *data, int size, char *url){
         }
         cache_element *element = (cache_element*)malloc(sizeof(cache_element));
         element -> data = (char*)malloc(size + 1);
-        strcpy
+        strcpy(element -> data, data);
+        element -> url = 
     }
 
 }
