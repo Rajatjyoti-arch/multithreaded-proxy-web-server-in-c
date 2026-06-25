@@ -381,7 +381,8 @@ int add_cache_element(char *data, int size, char *url){
         while(cache_size + element_size > max_size){
             remove_cache_element();
         }
-        cache_element *element = (cache_element)
+        cache_element *element = (cache_element*)malloc(sizeof(cache_element));
+        element
     }
 
 }
