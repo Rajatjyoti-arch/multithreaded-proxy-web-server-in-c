@@ -365,3 +365,7 @@ cache_element *find(char* url){
     printf("Lock is unlocked\n");
     return site;
 }
+
+int add_cache_element(char *data, int size, char *url){
+    
+}
