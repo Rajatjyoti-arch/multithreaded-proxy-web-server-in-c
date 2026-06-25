@@ -369,6 +369,6 @@ cache_element *find(char* url){
 int add_cache_element(char *data, int size, char *url){
     int temp_lock_val = pthread_mutex_lock(&lock);
     printf("Add cache lock Acquired %d\n", temp_lock_val);
-    int element_size = size + 1
+    int element_size = size + 1 + strlen(url) + sizeof(cache_elements);
 
 }
