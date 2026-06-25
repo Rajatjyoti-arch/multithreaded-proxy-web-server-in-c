@@ -350,7 +350,8 @@ cache_element *find(char* url){
         while(site != NULL){
             if(!strcmp(site->url, url)){
                 printf("LRU time track before: %ld", site->lru_time_track);
-                printf("\n url found)
+                printf("\n url found\n");
+                site->lru_time_track = time(NULL);
             }
         }
     }
