@@ -382,7 +382,10 @@ void remove_cache_element(){
                 p = q;
             }
         }
-        if
+        if(temp == head){
+            head = head -> next;
+        }
+        
     }
 }
 
