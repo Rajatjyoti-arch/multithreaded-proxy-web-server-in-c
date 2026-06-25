@@ -376,5 +376,8 @@ int add_cache_element(char *data, int size, char *url){
         printf("dd cache lock is unlocked\n");
         return 0;
     }
+    else{
+        while
+    }
 
 }
