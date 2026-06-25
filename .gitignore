@@ -6,18 +6,30 @@ proxy_server
 
 # Logs
 *.log
-auto_push.log
-auto_push_output.log
 
-# Local automation
+# Local automation scripts
 auto_push.sh
+nohup.out
 
-# IDEs
+# IDE / Editor files
 .vscode/
 .idea/
 *.swp
 *.swo
+*~
 
-# OS files
+# OS generated files
 .DS_Store
 Thumbs.db
+
+# Core dumps
+core
+core.*
+
+# Dependency files
+*.d
+
+# Archives
+*.tar.gz
+*.tgz
+*.zip
