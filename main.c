@@ -367,6 +367,6 @@ cache_element *find(char* url){
 }
 
 int add_cache_element(char *data, int size, char *url){
-    int
+    int temp_lock_
 
 }
