@@ -369,7 +369,9 @@ cache_element *find(char* url){
 }
 
 void remove_cache_element(){
-    
+    cache_element *p;
+    cache_element *q;
+    ca
 }
 
 int add_cache_element(char *data, int size, char *url){
