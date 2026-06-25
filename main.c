@@ -373,7 +373,8 @@ int add_cache_element(char *data, int size, char *url){
     int element_size = size + 1 + strlen(url) + sizeof(cache_element);
     if(element_size < max_element_size){
         temp_lock_val = thread_mutex_unlock(&lock);
-        
+        printf("dd cache lock is unlocked\n");
+        return 0;
     }
 
 }
