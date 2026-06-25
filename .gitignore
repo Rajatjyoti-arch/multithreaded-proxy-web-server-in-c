@@ -1,14 +1,23 @@
 # Compiled Binaries
 *.out
 *.o
+proxy
 proxy_server
 
 # Logs
+*.log
 auto_push.log
 auto_push_output.log
+
+# Local automation
+auto_push.sh
 
 # IDEs
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# OS files
+.DS_Store
+Thumbs.db
