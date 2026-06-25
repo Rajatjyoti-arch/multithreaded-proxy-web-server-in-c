@@ -18,6 +18,7 @@
 #define max_clients 10
 #define max_bytes 4096
 #define max_element_size 10*(1<<10)
+#define max_size 200*(1<<20)
 
 typedef struct cache_element cache_element;
 
