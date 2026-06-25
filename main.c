@@ -347,5 +347,10 @@ cache_element *find(char* url){
     printf("Remove cache lock acquired %d\n", temp_lock_val);
     if(head != NULL){
         site = head;
+        while(site != NULL){
+            if(!strcmp(site->url, url)){
+                printf()
+            }
+        }
     }
 }
