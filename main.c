@@ -377,8 +377,12 @@ void remove_cache_element(){
     printf("Lock is aqquired\n");
     if(head != NULL){
         for(q = head, p = head, temp = head; q -> next != NULL; q = q -> next){
-            if(((q -> next) -> lru_time_track) < (temp -> lru_time_track))
+            if(((q -> next) -> lru_time_track) < (temp -> lru_time_track)){
+                temp = q -> next;
+                p = q;
+            }
         }
+        if
     }
 }
 
