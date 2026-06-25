@@ -379,8 +379,9 @@ int add_cache_element(char *data, int size, char *url){
     }
     else{
         while(cache_size + element_size > max_size){
-            
+            remove_cache_element();
         }
+        cache_element *element = (cache_element)
     }
 
 }
