@@ -1,20 +1,15 @@
-CC := gcc
-CFLAGS := -g -Wall -Wextra -std=c11 -pthread
-TARGET := proxy
-OBJECTS := main.o proxy_parse.o
+CC=g++
+CFLAGS= -g -Wall
 
-.PHONY: all clean
+all: proxy
 
-all: $(TARGET)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(CFLAGS) -o $@ $(OBJECTS)
-
-main.o: main.c proxy_parse.h
-	$(CC) $(CFLAGS) -c main.c
-
-proxy_parse.o: proxy_parse.c proxy_parse.h
-	$(CC) $(CFLAGS) -c proxy_parse.c
+proxy: proxy_server_with_cache.c
+	$(CC) $(CFLAGS) -o proxy_parse.o -c proxy_parse.c -lpthread
+	$(CC) $(CFLAGS) -o proxy.o -c proxy_server_with_cache.c -lpthread
+	$(CC) $(CFLAGS) -o proxy proxy_parse.o proxy.o -lpthread
 
 clean:
-	rm -f $(TARGET) $(OBJECTS)
+	rm -f proxy *.o
+
+# tar:
+	# tar -cvzf ass1.tgz proxy_server_with_cache.c README Makefile proxy_parse.c proxy_parse.h
