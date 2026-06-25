@@ -386,6 +386,7 @@ void remove_cache_element(){
         else{
             p -> next = temp -> next;
         }
+        cache_seze = 
     }
 }
 
