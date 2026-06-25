@@ -386,7 +386,7 @@ void remove_cache_element(){
         else{
             p -> next = temp -> next;
         }
-        cache_size = cache_S    }
+        cache_size = cache_size - (temp _> len) - sizeof    }
 }
 
 int add_cache_element(char *data, int size, char *url){
