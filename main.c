@@ -386,7 +386,7 @@ void remove_cache_element(){
         else{
             p -> next = temp -> next;
         }
-        cache_size = cache_size - (temp _> len) - sizeof(cache_element) - strlent(temp -> url) - 1;
+        cache_size = cache_size - (temp -> len) - sizeof(cache_element) - strlen(temp -> url) - 1;
         free(temp -> data);
         free(temp -> url);
         free(temp);
