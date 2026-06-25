@@ -371,7 +371,9 @@ cache_element *find(char* url){
 void remove_cache_element(){
     cache_element *p;
     cache_element *q;
-    ca
+    cache_element *temp;
+
+    int temp_lock_val = pthread_mutex_lock
 }
 
 int add_cache_element(char *data, int size, char *url){
