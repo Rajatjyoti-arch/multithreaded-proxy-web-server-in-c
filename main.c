@@ -368,6 +368,10 @@ cache_element *find(char* url){
     return site;
 }
 
+void remove_cache_element(){
+    
+}
+
 int add_cache_element(char *data, int size, char *url){
     int temp_lock_val = pthread_mutex_lock(&lock);
     printf("Add cache lock Acquired %d\n", temp_lock_val);
