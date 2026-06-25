@@ -385,7 +385,9 @@ void remove_cache_element(){
         if(temp == head){
             head = head -> next;
         }
-        
+        else{
+            p -> next = temp -> next;
+        }
     }
 }
 
