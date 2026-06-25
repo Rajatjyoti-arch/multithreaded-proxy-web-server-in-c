@@ -392,7 +392,9 @@ int add_cache_element(char *data, int size, char *url){
         head = element;
         cache_size += element_size;
         temp_lock_val = pthread_mutex_unlock(&lock);
-        printf("add cache lock is u")
+        printf("add cache lock is unloacked\n");
+        return 1;
     }
+    return 0;
 
 }
