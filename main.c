@@ -341,4 +341,8 @@ int main(int argc, char* argv[]){
     return 0;
 }
 
-cache_elem
+cache_element *find(char* url){
+    cache_element * site = NULL;
+    int itme_lock_val = pthread_mutex_lock(&lock);
+    
+}
