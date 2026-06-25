@@ -376,7 +376,7 @@ void remove_cache_element(){
     int temp_lock_val = pthread_mutex_lock(&lock);
     printf("Lock is aqquired\n");
     if(head != NULL){
-        for(q = head, p = head, )
+        for(q = head, p = head, temp =  )
     }
 }
 
