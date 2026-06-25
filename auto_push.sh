@@ -85,6 +85,6 @@ while true; do
         echo "[$(date)] Pushed: $COMMIT_MSG" >> auto_push.log
     fi
     
-    # Sleep for 1 minute (60 seconds)
-    sleep 60
+    # Sleep for 30 seconds
+    sleep 30
 done
