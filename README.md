@@ -142,9 +142,3 @@ These constants are defined at the top of `main.c` and can be modified before co
 - **DNS Resolution** — `gethostbyname()` for resolving hostnames to IP addresses
 - **LRU Cache** — Linked-list based cache with time-tracked eviction
 - **HTTP Parsing** — Tokenizing and extracting fields from raw HTTP request buffers
-
----
-
-## 📜 License
-
-This project is open source and available for educational and personal use.
