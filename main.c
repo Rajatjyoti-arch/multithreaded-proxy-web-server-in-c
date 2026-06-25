@@ -391,7 +391,8 @@ void remove_cache_element(){
         free(temp -> url);
         free(temp);
     }
-    temp_lock_val = pthread_mutex_destroy
+    temp_lock_val = pthread_mutex_unlock()
+    
 }
 
 int add_cache_element(char *data, int size, char *url){
