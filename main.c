@@ -343,6 +343,9 @@ int main(int argc, char* argv[]){
 
 cache_element *find(char* url){
     cache_element * site = NULL;
-    int itme_lock_val = pthread_mutex_lock(&lock);
-    printf("Remove cache lock acquired %d\n", )
+    int temp_lock_val = pthread_mutex_lock(&lock);
+    printf("Remove cache lock acquired %d\n", temp_lock_val);
+    if(head != NULL){
+        site = head;
+    }
 }
