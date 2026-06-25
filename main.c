@@ -385,7 +385,9 @@ int add_cache_element(char *data, int size, char *url){
         element -> data = (char*)malloc(size + 1);
         strcpy(element -> data, data);
         element -> url = (char*)malloc(1 + (strlen(url)*sizeof(char)));
-        strcpy(element -> url)
+        strcpy(element -> url, url);
+        element -> lru_time_track = time(NULL);
+        element
     }
 
 }
