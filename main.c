@@ -30,7 +30,7 @@ struct cache_element{
     cache_element*next;
 };
 cache_element* find(char* url);
-int  add_cache_element(char* url, char* data, int size); 
+int add_cache_element(char* data, int size, char* url);
 void remove_cache_element();
 
 int port_number = 8080;
@@ -59,8 +59,8 @@ int connectRemoteServer(char* host_addr, int port_num){
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port_num);
 
-    bcopy((char *)&host->h_addr, (char *)&server_addr.sin_addr.s_addr, host->h_length);
-    if(connect(remoteSocket, (struct socaksddr *)&server_addr,(size_t)sizeof(server_addr)<0)){
+    bcopy((char *)host->h_addr, (char *)&server_addr.sin_addr.s_addr, host->h_length);
+    if(connect(remoteSocket, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0){
         fprintf(stderr, "Error in connecting\n");
         return -1;
     }
@@ -79,7 +79,7 @@ int sendErrorMessage(int socket, int status_code){
 
 	switch(status_code)
 	{
-		case 400: snprintf(str, sizeof(str), "HTTP/1.1 400 Bad Request\r\nContent-Length: 95\r\nConnection: keep-alive\r\nContent-Type: text/html\r\nDate: %s\r\nServer: VaibhavN/14785\r\n\r\n<HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>\n<BODY><H1>400 Bad Rqeuest</H1>\n</BODY></HTML>", currentTime);
+		case 400: snprintf(str, sizeof(str), "HTTP/1.1 400 Bad Request\r\nContent-Length: 95\r\nConnection: keep-alive\r\nContent-Type: text/html\r\nDate: %s\r\nServer: VaibhavN/14785\r\n\r\n<HTML><HEAD><TITLE>400 Bad Request</TITLE></HEAD>\n<BODY><H1>400 Bad Request</H1>\n</BODY></HTML>", currentTime);
 				  printf("400 Bad Request\n");
 				  send(socket, str, strlen(str), 0);
 				  break;
@@ -116,7 +116,7 @@ int sendErrorMessage(int socket, int status_code){
 }
 
 
-int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
+int handle_request(int clientSocketID, struct ParsedRequest *request, char* tempReq){
     char *buf = (char *)malloc(sizeof(char)*max_bytes);
     strcpy(buf, "GET");
     strcat(buf, request->path);
@@ -179,7 +179,7 @@ int handle_request(int clientSocketID, ParsendRequest *request, char* tempReq){
     return 0;
 }
 
-int checkGTTPversion(char *msg)
+int checkHTTPversion(char *msg)
 {
     int version = -1;
     if(strncmp(msg, "HTTP/1.1", 8) == 0){
@@ -197,14 +197,14 @@ int checkGTTPversion(char *msg)
 void* thread_fn(void* socketNew){
     sem_wait(&semaphore);
     int p;
-    sem_getvalue(&semaphore, p);
+    sem_getvalue(&semaphore, &p);
     printf("semaphore value is : %d\n",p);
     int *t = (int*) socketNew;
     int socket = *t;
     int bytes_send_client, len;
 
     char *buffer = (char*)calloc(max_bytes, sizeof(char));
-    bezero(buffer, max_bytes);
+    bzero(buffer, max_bytes);
     bytes_send_client = recv(socket, buffer, max_bytes, 0);
 
     while(bytes_send_client > 0){
@@ -227,7 +227,7 @@ void* thread_fn(void* socketNew){
         int pos = 0;
         char response [max_bytes];
         while(pos*size){
-            bezero(response, max_bytes);
+            bzero(response, max_bytes);
             for(int i = 0; i<max_bytes; i++){
                 response[i] = temp->data[i];
                 pos++;
@@ -239,7 +239,7 @@ void* thread_fn(void* socketNew){
     }
     else if(bytes_send_client>0){
         len = strlen(buffer);
-        ParsedRequest *request = ParsedRequest_create();
+        struct ParsedRequest *request = ParsedRequest_create();
 
         if(ParsedRequest_parse(request, buffer, len)<0){
             printf("parsing failed\n");
@@ -270,7 +270,7 @@ void* thread_fn(void* socketNew){
     close(socket);
     free(buffer);
     sem_post(&semaphore);
-    sem_getvalue(&semaphore,p);
+    sem_getvalue(&semaphore, &p);
     printf("Semaphore post value is %d\n", p);
     free(tempReq);
     return NULL;
@@ -282,30 +282,30 @@ int main(int argc, char* argv[]){
     struct sockaddr_in server_addr, client_addr;
     sem_init(&semaphore,0, max_clients);
     pthread_mutex_init(&lock, NULL);
-    if(argv == 2){
+    if(argc == 2){
         port_number = atoi(argv[1]);
     }
     else{
-        printf("Too few argumments\n");
+        printf("Too few arguments\n");
         exit(1);
     }
 
     printf("Starting Proxy server at port : %d\n", port_number);
     proxy_socketID = socket(AF_INET, SOCK_STREAM, 0);
     if(proxy_socketID<0){
-        perror("Failed to creat a socket\n");
+        perror("Failed to create a socket\n");
         exit(1);
     }
     int reuse = 1;
     if(setsockopt(proxy_socketID, SOL_SOCKET, SO_REUSEADDR, (const char*)&reuse, sizeof(reuse))<0){
-        perror("setSockOpt failded\n");
+        perror("setsockopt failed\n");
     }
 
     bzero((char*)&server_addr, sizeof(server_addr));
     server_addr.sin_family = AF_INET;
     server_addr.sin_port = htons(port_number);
     server_addr.sin_addr.s_addr = INADDR_ANY;
-    if(bind(proxy_socketID,(struct sockaddr*)&server_addr, sizeof(server_addr)<0)){
+    if(bind(proxy_socketID, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0){
         perror("Port is not available\n");
         exit(1);
     }
@@ -374,7 +374,7 @@ void remove_cache_element(){
     cache_element *temp;
 
     int temp_lock_val = pthread_mutex_lock(&lock);
-    printf("Lock is aqquired\n");
+    printf("Lock is acquired\n");
     if(head != NULL){
         for(q = head, p = head, temp = head; q -> next != NULL; q = q -> next){
             if(((q -> next) -> lru_time_track) < (temp -> lru_time_track)){
@@ -396,8 +396,8 @@ int add_cache_element(char *data, int size, char *url){
     printf("Add cache lock Acquired %d\n", temp_lock_val);
     int element_size = size + 1 + strlen(url) + sizeof(cache_element);
     if(element_size < max_element_size){
-        temp_lock_val = thread_mutex_unlock(&lock);
-        printf("dd cache lock is unlocked\n");
+        temp_lock_val = pthread_mutex_unlock(&lock);
+        printf("Add cache lock is unlocked\n");
         return 0;
     }
     else{
@@ -415,7 +415,7 @@ int add_cache_element(char *data, int size, char *url){
         head = element;
         cache_size += element_size;
         temp_lock_val = pthread_mutex_unlock(&lock);
-        printf("add cache lock is unloacked\n");
+        printf("Add cache lock is unlocked\n");
         return 1;
     }
     return 0;
